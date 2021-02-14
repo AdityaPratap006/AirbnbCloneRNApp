@@ -13,6 +13,7 @@ export const HomeScreen = (props) => {
                 <View style={styles.headerContent}>
                     <Text style={styles.title}>Go Near</Text>
                     <Pressable
+                        android_ripple={{ color: '#aaa', borderless: false }}
                         style={styles.button}
                         onPress={() => {
                             console.warn('Explore Btn clicked!');

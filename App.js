@@ -1,5 +1,6 @@
 import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+import { Accommodation } from './src/components/Accommodation';
 import { HomeScreen } from './src/screens/HomeScreen';
 
 const App = () => {
@@ -7,7 +8,8 @@ const App = () => {
         <>
             <StatusBar barStyle="dark-content" />
             <SafeAreaView style={styles.appContainer}>
-                <HomeScreen />
+                {/* <HomeScreen /> */}
+                <Accommodation />
             </SafeAreaView>
         </>
     );
