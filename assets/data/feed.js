@@ -1,7 +1,8 @@
 export const feed = [
     {
         id: '0',
-        image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg',
+        image:
+            'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg',
         type: 'Private Room',
         title: 'Bright room in the heart of the city',
         description:
@@ -18,7 +19,8 @@ export const feed = [
     },
     {
         id: '1',
-        image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/2.jpg',
+        image:
+            'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/2.jpg',
         type: 'Entire Flat',
         title: 'NEW lux. apartment in the center of Santa Cruz',
         description:
@@ -35,7 +37,8 @@ export const feed = [
     },
     {
         id: '2',
-        image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/3.jpg',
+        image:
+            'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/3.jpg',
         type: 'Private Property',
         title: 'Green House Santa Cruz',
         description:
@@ -52,7 +55,8 @@ export const feed = [
     },
     {
         id: '3',
-        image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/4.jpg',
+        image:
+            'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/4.jpg',
         type: 'Entire Flat',
         title: 'Typical canarian house',
         description:

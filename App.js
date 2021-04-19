@@ -1,7 +1,8 @@
 import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 // import { HomeScreen } from './src/screens/HomeScreen';
-import SearchResultsScreen from './src/screens/SearchResultsScreen';
+// import SearchResultsScreen from './src/screens/SearchResultsScreen';
+import { DestinationSearchScreen } from './src/screens/DestinationSearchScreen';
 
 const App = () => {
     return (
@@ -9,15 +10,8 @@ const App = () => {
             <StatusBar barStyle="dark-content" />
             <SafeAreaView style={styles.appContainer}>
                 {/* <HomeScreen /> */}
-                {/* <ScrollView>
-                    {feed.map((accommodation) => (
-                        <Accommodation
-                            key={accommodation.id}
-                            accommodation={accommodation}
-                        />
-                    ))}
-                </ScrollView> */}
-                <SearchResultsScreen />
+                {/* <SearchResultsScreen /> */}
+                <DestinationSearchScreen />
             </SafeAreaView>
         </>
     );
