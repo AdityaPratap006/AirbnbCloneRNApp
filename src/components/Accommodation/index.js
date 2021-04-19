@@ -3,7 +3,6 @@ import { Text, View, Image } from 'react-native';
 import { styles } from './styles';
 
 export const Accommodation = ({ accommodation = {} }) => {
-    console.log(accommodation);
     const {
         type,
         title,
