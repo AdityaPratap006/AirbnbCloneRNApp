@@ -2,7 +2,9 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
     container: {
+        flex: 1,
         padding: 20,
+        justifyContent: 'space-between',
     },
     row: {
         flexDirection: 'row',
@@ -42,5 +44,25 @@ export const styles = StyleSheet.create({
     value: {
         marginHorizontal: 10,
         fontSize: 20,
+    },
+    searchContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingHorizontal: 10,
+    },
+    searchButton: {
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#f15454',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 10,
+    },
+    searchText: {
+        fontSize: 18,
+        color: '#fff',
+        fontWeight: 'bold',
     },
 });

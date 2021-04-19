@@ -3,7 +3,7 @@ import { View, FlatList } from 'react-native';
 import { feed } from '../../../assets/data/feed';
 import { Accommodation } from '../../components/Accommodation';
 
-const SearchResultsScreen = () => {
+export const SearchResultsScreen = () => {
     return (
         <View>
             <FlatList
@@ -16,5 +16,3 @@ const SearchResultsScreen = () => {
         </View>
     );
 };
-
-export default SearchResultsScreen;
