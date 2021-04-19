@@ -2,7 +2,8 @@ import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 // import { HomeScreen } from './src/screens/HomeScreen';
 // import SearchResultsScreen from './src/screens/SearchResultsScreen';
-import { DestinationSearchScreen } from './src/screens/DestinationSearchScreen';
+// import { DestinationSearchScreen } from './src/screens/DestinationSearchScreen';
+import { GuestsFilterScreen } from './src/screens/GuestsFilterScreen';
 
 const App = () => {
     return (
@@ -11,7 +12,8 @@ const App = () => {
             <SafeAreaView style={styles.appContainer}>
                 {/* <HomeScreen /> */}
                 {/* <SearchResultsScreen /> */}
-                <DestinationSearchScreen />
+                {/* <DestinationSearchScreen /> */}
+                <GuestsFilterScreen />
             </SafeAreaView>
         </>
     );
