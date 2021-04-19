@@ -1,7 +1,8 @@
 import React from 'react';
-import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+import { SafeAreaView, StatusBar, StyleSheet, ScrollView } from 'react-native';
 import { Accommodation } from './src/components/Accommodation';
-import { HomeScreen } from './src/screens/HomeScreen';
+// import { HomeScreen } from './src/screens/HomeScreen';
+import { feed } from './assets/data/feed';
 
 const App = () => {
     return (
@@ -9,7 +10,14 @@ const App = () => {
             <StatusBar barStyle="dark-content" />
             <SafeAreaView style={styles.appContainer}>
                 {/* <HomeScreen /> */}
-                <Accommodation />
+                <ScrollView>
+                    {feed.map((accommodation) => (
+                        <Accommodation
+                            key={accommodation.id}
+                            accommodation={accommodation}
+                        />
+                    ))}
+                </ScrollView>
             </SafeAreaView>
         </>
     );

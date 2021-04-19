@@ -16,9 +16,10 @@ export const styles = StyleSheet.create({
         color: '#777',
         marginVertical: 10,
     },
-    description: {
+    typeAndTitle: {
         fontSize: 18,
         lineHeight: 26,
+        marginBottom: 10,
     },
     prices: {
         fontSize: 18,
@@ -30,7 +31,7 @@ export const styles = StyleSheet.create({
     newPrice: { fontWeight: 'bold' },
     totalPrice: {
         marginTop: 10,
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: 'bold',
         textDecorationLine: 'underline',
     },
