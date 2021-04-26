@@ -63,3 +63,4 @@ buck-out/
 
 # Secrets
 secrets.js
+android/secrets.properties
