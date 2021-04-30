@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { StyleSheet, View, FlatList, useWindowDimensions } from 'react-native';
 import MapView from 'react-native-maps';
 import { feed } from '../../../assets/data/feed';
@@ -8,14 +8,44 @@ import { CustomMapMarker } from '../../components/CustomMapMarker';
 export const SearchResultsMap = () => {
     const [selectedPlaceId, setSelectedPlaceId] = useState(null);
     const { width: deviceWidth } = useWindowDimensions();
+    const flatListRef = useRef(null);
+    const viewConfig = useRef({
+        itemVisiblePercentThreshold: 30,
+    });
+    const onViewChanged = useRef(({ viewableItems }) => {
+        if (viewableItems.length > 0) {
+            const selectedPlace = viewableItems[0].item;
+            setSelectedPlaceId(selectedPlace.id);
+        }
+    });
+    const mapRef = useRef(null);
 
     const onSelectPlaceHandler = (placeId) => {
         setSelectedPlaceId(placeId);
     };
 
+    useEffect(() => {
+        if (!selectedPlaceId || !flatListRef || !mapRef) {
+            return;
+        }
+        const index = feed.findIndex((place) => place.id === selectedPlaceId);
+        flatListRef.current.scrollToIndex({ index });
+
+        const selectedPlace = feed[index];
+        const region = {
+            latitude: selectedPlace.coordinate.latitude,
+            longitude: selectedPlace.coordinate.longitude,
+            latitudeDelta: 0.8,
+            longitudeDelta: 0.8,
+        };
+
+        mapRef.current.animateToRegion(region);
+    }, [selectedPlaceId]);
+
     return (
         <View style={styles.container}>
             <MapView
+                ref={mapRef}
                 style={styles.map}
                 initialRegion={{
                     latitude: feed[0].coordinate.latitude,
@@ -36,6 +66,7 @@ export const SearchResultsMap = () => {
             </MapView>
             <View style={styles.carousel}>
                 <FlatList
+                    ref={flatListRef}
                     data={feed}
                     renderItem={({ item }) => (
                         <AccommodationCarouselItem accommodation={item} />
@@ -45,6 +76,8 @@ export const SearchResultsMap = () => {
                     snapToInterval={deviceWidth - 60}
                     snapToAlignment={'center'}
                     decelerationRate={'fast'}
+                    onViewableItemsChanged={onViewChanged.current}
+                    viewabilityConfig={viewConfig.current}
                 />
             </View>
         </View>
