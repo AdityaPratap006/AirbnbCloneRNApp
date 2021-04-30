@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, FlatList, useWindowDimensions } from 'react-native';
 import MapView from 'react-native-maps';
 import { feed } from '../../../assets/data/feed';
 import { AccommodationCarouselItem } from '../../components/AccomodationCarouselItem';
@@ -7,6 +7,7 @@ import { CustomMapMarker } from '../../components/CustomMapMarker';
 
 export const SearchResultsMap = () => {
     const [selectedPlaceId, setSelectedPlaceId] = useState(null);
+    const { width: deviceWidth } = useWindowDimensions();
 
     const onSelectPlaceHandler = (placeId) => {
         setSelectedPlaceId(placeId);
@@ -34,7 +35,17 @@ export const SearchResultsMap = () => {
                 ))}
             </MapView>
             <View style={styles.carousel}>
-                <AccommodationCarouselItem accommodation={feed[0]} />
+                <FlatList
+                    data={feed}
+                    renderItem={({ item }) => (
+                        <AccommodationCarouselItem accommodation={item} />
+                    )}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    snapToInterval={deviceWidth - 60}
+                    snapToAlignment={'center'}
+                    decelerationRate={'fast'}
+                />
             </View>
         </View>
     );
@@ -49,6 +60,6 @@ const styles = StyleSheet.create({
     },
     carousel: {
         position: 'absolute',
-        bottom: 40,
+        bottom: 10,
     },
 });

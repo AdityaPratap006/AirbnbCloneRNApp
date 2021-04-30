@@ -3,16 +3,7 @@ import { Text, View, Image, useWindowDimensions } from 'react-native';
 import { styles } from './styles';
 
 export const AccommodationCarouselItem = ({ accommodation }) => {
-    const {
-        type,
-        title,
-        bed,
-        bedroom,
-        oldPrice,
-        newPrice,
-        totalPrice,
-        image,
-    } = accommodation;
+    const { type, title, bed, bedroom, newPrice, image } = accommodation;
     const { width: deviceWidth } = useWindowDimensions();
 
     return (

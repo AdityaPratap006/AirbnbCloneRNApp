@@ -4,6 +4,16 @@ export const styles = StyleSheet.create({
     container: {
         height: 120,
         padding: 5,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.34,
+        shadowRadius: 6.27,
+
+        elevation: 10,
+        marginVertical: 5,
     },
     innerContainer: {
         flexDirection: 'row',
@@ -28,9 +38,8 @@ export const styles = StyleSheet.create({
         marginVertical: 5,
     },
     typeAndTitle: {
-        fontSize: 18,
-        lineHeight: 26,
-        marginBottom: 7,
+        fontSize: 14,
+        marginBottom: 5,
     },
     prices: {
         fontSize: 18,
