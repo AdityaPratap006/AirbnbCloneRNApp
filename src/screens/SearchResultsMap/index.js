@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import MapView from 'react-native-maps';
 import { feed } from '../../../assets/data/feed';
+import { AccommodationCarouselItem } from '../../components/AccomodationCarouselItem';
 import { CustomMapMarker } from '../../components/CustomMapMarker';
 
 export const SearchResultsMap = () => {
@@ -32,6 +33,9 @@ export const SearchResultsMap = () => {
                     />
                 ))}
             </MapView>
+            <View style={styles.carousel}>
+                <AccommodationCarouselItem accommodation={feed[0]} />
+            </View>
         </View>
     );
 };
@@ -42,5 +46,9 @@ const styles = StyleSheet.create({
     },
     map: {
         flex: 1,
+    },
+    carousel: {
+        position: 'absolute',
+        bottom: 40,
     },
 });
