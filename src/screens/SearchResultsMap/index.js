@@ -10,10 +10,15 @@ export const SearchResultsMap = () => {
     const { width: deviceWidth } = useWindowDimensions();
     const flatListRef = useRef(null);
     const viewConfig = useRef({
-        itemVisiblePercentThreshold: 30,
+        itemVisiblePercentThreshold: 80,
     });
     const onViewChanged = useRef(({ viewableItems }) => {
-        if (viewableItems.length > 0) {
+        if (viewableItems.length === 2) {
+            console.log(viewableItems);
+            const selectedPlace = viewableItems[1].item;
+            setSelectedPlaceId(selectedPlace.id);
+        } else if (viewableItems.length > 0) {
+            console.log(viewableItems);
             const selectedPlace = viewableItems[0].item;
             setSelectedPlaceId(selectedPlace.id);
         }
@@ -53,6 +58,7 @@ export const SearchResultsMap = () => {
                     latitudeDelta: 0.8,
                     longitudeDelta: 0.8,
                 }}
+                // region={{}}
             >
                 {feed.map((accommodation) => (
                     <CustomMapMarker
