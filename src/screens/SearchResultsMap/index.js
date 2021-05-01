@@ -14,11 +14,11 @@ export const SearchResultsMap = () => {
     });
     const onViewChanged = useRef(({ viewableItems }) => {
         if (viewableItems.length === 2) {
-            console.log(viewableItems);
+            // console.log(viewableItems);
             const selectedPlace = viewableItems[1].item;
             setSelectedPlaceId(selectedPlace.id);
         } else if (viewableItems.length > 0) {
-            console.log(viewableItems);
+            // console.log(viewableItems);
             const selectedPlace = viewableItems[0].item;
             setSelectedPlaceId(selectedPlace.id);
         }
