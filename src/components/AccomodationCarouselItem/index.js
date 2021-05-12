@@ -1,13 +1,30 @@
 import React from 'react';
-import { Text, View, Image, useWindowDimensions } from 'react-native';
+import {
+    Text,
+    View,
+    Image,
+    useWindowDimensions,
+    Pressable,
+} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { styles } from './styles';
 
 export const AccommodationCarouselItem = ({ accommodation }) => {
     const { type, title, bed, bedroom, newPrice, image } = accommodation;
     const { width: deviceWidth } = useWindowDimensions();
+    const navigation = useNavigation();
+
+    const goToAccommodationScreen = () => {
+        navigation.navigate('Accommodation', {
+            accommodationId: accommodation.id,
+        });
+    };
 
     return (
-        <View style={[styles.container, { width: deviceWidth - 60 }]}>
+        <Pressable
+            style={[styles.container, { width: deviceWidth - 60 }]}
+            onPress={goToAccommodationScreen}
+        >
             <View style={styles.innerContainer}>
                 {/* Image */}
                 <Image
@@ -35,6 +52,6 @@ export const AccommodationCarouselItem = ({ accommodation }) => {
                     </Text>
                 </View>
             </View>
-        </View>
+        </Pressable>
     );
 };

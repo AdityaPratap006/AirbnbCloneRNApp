@@ -1,9 +1,8 @@
 import React from 'react';
-import { Text, Image, Pressable } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { Text, Image, ScrollView } from 'react-native';
 import { styles } from './styles';
 
-export const Accommodation = ({ accommodation }) => {
+export const DetailedAccommodation = ({ accommodation }) => {
     const {
         type,
         title,
@@ -13,17 +12,11 @@ export const Accommodation = ({ accommodation }) => {
         newPrice,
         totalPrice,
         image,
+        description,
     } = accommodation;
-    const navigation = useNavigation();
-
-    const goToAccommodationScreen = () => {
-        navigation.navigate('Accommodation', {
-            accommodationId: accommodation.id,
-        });
-    };
 
     return (
-        <Pressable style={styles.container} onPress={goToAccommodationScreen}>
+        <ScrollView style={styles.container}>
             {/* Image */}
             <Image
                 style={styles.image}
@@ -49,6 +42,8 @@ export const Accommodation = ({ accommodation }) => {
             </Text>
             {/* Total price */}
             <Text style={styles.totalPrice}>${totalPrice} total</Text>
-        </Pressable>
+
+            <Text style={styles.description}>{description}</Text>
+        </ScrollView>
     );
 };

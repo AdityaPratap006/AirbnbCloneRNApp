@@ -10,6 +10,7 @@ export const HomeScreen = (props) => {
     return (
         <View style={styles.container}>
             <ImageBackground
+                // @ts-ignore
                 source={require('../../../assets/images/wallpaper.jpg')}
                 style={styles.backgroundImage}
             >

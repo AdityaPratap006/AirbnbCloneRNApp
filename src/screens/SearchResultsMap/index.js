@@ -10,7 +10,7 @@ export const SearchResultsMap = () => {
     const { width: deviceWidth } = useWindowDimensions();
     const flatListRef = useRef(null);
     const viewConfig = useRef({
-        itemVisiblePercentThreshold: 80,
+        itemVisiblePercentThreshold: 100,
     });
     const onViewChanged = useRef(({ viewableItems }) => {
         if (viewableItems.length === 2) {
